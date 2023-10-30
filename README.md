@@ -4,7 +4,7 @@
 
 # Registro de Tickets
 
-Para poder registrar un ticket hay que estar seguros que el representante es el correcto, el representante tiene que tener solo 2 nombres (Primer nombre y segundo nombre).
+Para poder registrar un ticket hay que estar seguros que el representante es el correcto, el representante tiene que tener solo 1er Nombre y 1er Apellido (Primer nombre y segundo nombre).
 El Representante tiene que ser el mismo con el que se dio de alta el alumno, de lo contrario el sistema para crear tickets notificara que no estan correctos los datos o
 que fallo el registro.
 
