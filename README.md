@@ -1,3 +1,30 @@
+# Credenciales para realizar pruebas de administrador:
+### Usuario: admin2
+### Contraseña: admin2
+
+# Registro de Tickets
+
+Para poder registrar un ticket hay que estar seguros que el representante es el correcto, el representante tiene que tener solo 1er Nombre y 1er Apellido (Primer nombre y segundo nombre).
+El Representante tiene que ser el mismo con el que se dio de alta el alumno, de lo contrario el sistema para crear tickets notificara que no estan correctos los datos o
+que fallo el registro.
+
+# Inicio de sesion
+
+Para iniciar sesion es necesario primero crear una cuenta como administrador, para poder vizualizar todo el contenido completo de esta practica, las rutas estan protegidas
+de no hacer el registo el programa simplemente no dejara entrar a las paginas correspondientes, el registro tiene validaciones directamente con la base de datos, y si no
+son correctos el usuario y la contraseña y el captcha no esta completo,  sera imposible poder acceder en modo administrador.
+
+# Creacion de cuenta
+
+Puedes estar seguro de agregar la contraseña que desees, nuestro sistema esta preparado para encriptar la contraseña, tu contraseña se guardara encriptada en nuestra base 
+de datos, y no hay riesgo de que sea vizualizada, en caso de ser administrador, y requerir borrar la cuenta registrada, necesitas solo ver el "ID" (Que puede vizualisar en la 
+tabla de la base de datos en el partado de "Catalogos"), y seleccionar el boton "Borrar".
+
+# Dudas y aclaraciones
+
+Cualquier duda y aclaracion para la correcta utilizacion de este programa sera necesario contactarme directamente para poder resolver cualquier tema.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
