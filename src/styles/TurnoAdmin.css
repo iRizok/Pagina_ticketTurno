@@ -1,7 +1,16 @@
-/* Estilos generales para el contenedor principal */
+/* Estilos generales para el cuerpo de la página */
+body {
+  background-color: #1f1f1f;
+  color: #ffffff;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilos para el contenedor principal de la página */
 .container-tickets {
   display: flex;
-  background-color: #303030; /* Color de fondo del contenedor */
+  flex-wrap: wrap; /* Permite que los elementos se ajusten a la fila siguiente en dispositivos pequeños */
+  background-color: #303030;
   border-radius: 10px;
   padding: 20px;
 }
@@ -9,22 +18,23 @@
 /* Estilos para el contenedor del contenido principal y formulario */
 .content-container {
   display: flex;
-  width: 100%; /* Ocupa todo el ancho del contenedor principal */
+  width: 100%;
   padding: 10px;
+  flex-direction: column; /* Cambia la dirección de la disposición a columna en dispositivos móviles */
 }
 
 /* Estilos para el contenido principal */
 .main-content {
-  flex: 1; /* Hace que este contenedor ocupe todo el espacio disponible */
+  flex: 1;
   background-color: #1f1f1f;
   padding: 20px;
   border-radius: 5px;
-  margin-right: 20px; /* Márgenes a la derecha para separarlo del formulario */
+  margin-bottom: 20px; /* Agrega un margen inferior para separarlo del formulario en dispositivos móviles */
 }
 
 /* Estilos para el contenedor del formulario */
 .form-container {
-  width: 35%; /* Porcentaje del espacio disponible para el formulario */
+  width: 35%;
   background-color: #1f1f1f;
   padding: 20px;
   border-radius: 5px;
@@ -38,7 +48,7 @@
 }
 
 .search-container input[type="text"] {
-  flex: 1; /* Hace que el campo de búsqueda ocupe todo el espacio disponible horizontalmente */
+  flex: 1;
   padding: 10px;
   margin-right: 10px;
 }
@@ -79,12 +89,12 @@
   background-color: #ff4646;
   color: white;
   border: none;
-  border-radius: 5px; 
+  border-radius: 5px;
   cursor: pointer;
 }
 
 .actions-container button:last-child {
-  margin-right: 0; /* Elimina el margen derecho del último botón para evitar espacio adicional */
+  margin-right: 0;
 }
 
 /* Estilos para el formulario de registro de nuevo turno */
@@ -94,4 +104,13 @@
   color: white;
   border: none;
   border-radius: 5px;
+}
+
+/* Media query para dispositivos con ancho de pantalla de hasta 768px (móviles) */
+@media (max-width: 768px) {
+  /* Estilos para el contenedor del formulario en dispositivos móviles */
+  .form-container {
+    width: 100%;
+    margin-top: 20px;
+  }
 }

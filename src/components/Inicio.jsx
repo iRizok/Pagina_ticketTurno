@@ -34,11 +34,11 @@ const Inicio = ({ isLoggedIn, isAdmin, onLogout }) => {
       </header>
       <div className="content">
         <div className="button-container-vertical">
-          <Link to="/crear-ticket" className="large-button">
-            Crear Ticket
-          </Link>
           <Link to="/alumno" className="large-button">
             Nuevo ingreso
+          </Link>
+          <Link to="/crear-ticket" className="large-button">
+            Crear Ticket
           </Link>
           {isLoggedIn && isAdmin && (
             <Link to="/crud-catalogos" className="large-button">

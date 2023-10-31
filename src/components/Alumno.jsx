@@ -1,15 +1,18 @@
-import React, { useState, useEffect} from 'react';
-import { useNavigate } from 'react-router-dom';
-import Swal from 'sweetalert2';
-import '../styles/AlumnoStyle.css'; // Asegúrate de tener un archivo CSS para los estilos
-import { listEstado } from '../services/estado.services';
-import { listMunicipiosByIdEstado } from '../services/municipio.services';
-import { registerAlumno } from '../services/alumno.services';
-import { registerRepresentante, listRepresentante } from '../services/representante.services';
-import { listNivel } from '../services/nivel.services';
-import { listAsunto } from '../services/asunto.services'
-import { registerTurno } from '../services/turno.services';
-import RegistroTickets from './FormularioTickets';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import "../styles/AlumnoStyle.css"; // Asegúrate de tener un archivo CSS para los estilos
+import { listEstado } from "../services/estado.services";
+import { listMunicipiosByIdEstado } from "../services/municipio.services";
+import { registerAlumno } from "../services/alumno.services";
+import {
+  registerRepresentante,
+  listRepresentante,
+} from "../services/representante.services";
+import { listNivel } from "../services/nivel.services";
+import { listAsunto } from "../services/asunto.services";
+import { registerTurno } from "../services/turno.services";
+import RegistroTickets from "./FormularioTickets";
 
 const Alumno = () => {
   const navigate = useNavigate();
@@ -215,49 +218,48 @@ const Alumno = () => {
 
     const isValid = validateStep();
     if (isValid) {
-      const data = 
-        {
-          idRep: 26,
-          curp_alumno: "GZDM200729MCLMZRZ8",
-          idMunicipio: 10,
-          idNivel: 4,
-          idAsunto: 2
-        }
+      const data = {
+        idRep: 26,
+        curp_alumno: "GZDM200729MCLMZRZ8",
+        idMunicipio: 10,
+        idNivel: 4,
+        idAsunto: 2,
+      };
       try {
         // Enviar la solicitud con el objeto body
         const response = await registerTurno(data);
         console.log(idRep, data);
 
         // Verificar si la respuesta contiene un archivo PDF
-        if (response.headers.get('Content-Type') === 'application/pdf') {
-            // Obtener el blob del PDF
-            const blob = await response.blob();
+        if (response.headers.get("Content-Type") === "application/pdf") {
+          // Obtener el blob del PDF
+          const blob = await response.blob();
 
-            // Crear un objeto URL del blob
-            const url = window.URL.createObjectURL(blob);
+          // Crear un objeto URL del blob
+          const url = window.URL.createObjectURL(blob);
 
-            // Crear un enlace y hacer clic en él para iniciar la descarga
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'turno.pdf';
-            a.click();
+          // Crear un enlace y hacer clic en él para iniciar la descarga
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = "turno.pdf";
+          a.click();
 
-            // Limpiar el objeto URL después de la descarga
-            window.URL.revokeObjectURL(url);
+          // Limpiar el objeto URL después de la descarga
+          window.URL.revokeObjectURL(url);
         }
-        console.log('Datos enviados:', data);
+        console.log("Datos enviados:", data);
         Swal.fire({
-          icon: 'success',
-          title: 'Exito',
-          text: 'Datos ingresados exitosamente'
-        })
+          icon: "success",
+          title: "Exito",
+          text: "Datos ingresados exitosamente",
+        });
       } catch (error) {
-        console.error('Error al registrar turno:', error);
+        console.error("Error al registrar turno:", error);
         Swal.fire({
-          icon: 'warning',
-          title: 'Advertencia',
-          text: 'Los datos no fueron ingresados de manera correcta, vuelva a revisarlos'
-        })
+          icon: "warning",
+          title: "Advertencia",
+          text: "Los datos no fueron ingresados de manera correcta, vuelva a revisarlos",
+        });
         // Aquí puedes manejar el error de alguna manera, mostrar un mensaje al usuario, etc.
       }
     }
@@ -323,7 +325,6 @@ const Alumno = () => {
         <div className={`progress-bar-step ${step >= 3 ? "active" : ""}`}></div>
       </div>
       <div className="form-container-alumnos">
-
         {step === 1 && (
           <div className="form">
             <h2>Alumno</h2>
@@ -384,7 +385,7 @@ const Alumno = () => {
             <h2>Representante</h2>
             <input
               type="text"
-              placeholder="Nombre"
+              placeholder="Primer Nombre y Primer Apellido"
               value={formData.representante.nombre}
               onChange={(e) =>
                 handleInputChange("representante", "nombre", e.target.value)
@@ -452,12 +453,12 @@ const Alumno = () => {
           </div>
         )}
 
-{step === 3 && (
-  <div> 
-    <h4>Rellene de nuevo sus datos para generar su turno</h4>
-    <RegistroTickets/>
-  </div>
-)}
+        {step === 3 && (
+          <div>
+            <h4>Rellene de nuevo sus datos para generar su turno</h4>
+            <RegistroTickets />
+          </div>
+        )}
       </div>
     </div>
   );

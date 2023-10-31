@@ -4,6 +4,7 @@ import logo from "../images/iniciar-sesion.png";
 import "../styles/LoginStyle.css";
 import { useNavigate } from "react-router-dom";
 import { loginAdmin } from "../services/admin.services";
+import { Link } from "react-router-dom";
 
 const Login = ({ onLogin }) => {
   const [isCaptchaVerified, setIsCaptchaVerified] = useState(false);
@@ -83,9 +84,9 @@ const Login = ({ onLogin }) => {
             Acceder
           </button>
         </form>
-        <button className="create-account-button">
-          <a href="/crear-cuenta">Crear una cuenta nueva</a>
-        </button>
+        <Link className="create-account-button2" to="/cuenta-nueva">
+          Crear usuario
+        </Link>
       </div>
     </div>
   );

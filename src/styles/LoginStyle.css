@@ -42,7 +42,6 @@ body {
   outline: none; /* Elimina el contorno del input al hacer clic en él */
 }
 
-/* Estilos para el captcha */
 .g-recaptcha {
   margin: 0 auto;
   margin-top: 10px;
@@ -51,35 +50,25 @@ body {
 }
 
 .login-button,
-.create-account-button {
+.create-account-button2 {
   background-color: #007bff;
   color: #ffffff;
   border: none;
-  padding: 10px 20px;
+  padding: 10px 0;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   text-decoration: none;
   margin-top: 10px;
   display: block;
-  width: 100%;
+  width: 80%; /* Establece el ancho del 80% para los botones */
   font-size: 14px;
+  margin: 10px auto; /* Centra los botones horizontalmente */
 }
 
 .login-button:hover,
-.create-account-button:hover {
+.create-account-button2:hover {
   background-color: #0056b3;
-}
-
-.g-recaptcha {
-  min-height: 78px; /* Establece una altura mínima para el contenedor de ReCAPTCHA */
-}
-
-.g-recaptcha {
-  z-index: 9999; /* Establece un z-index alto para el contenedor de ReCAPTCHA */
-  .login-button {
-    margin-top: 20px; /* Ajusta el margen superior del botón de iniciar sesión */
-  }
 }
 
 .error-message {
@@ -95,7 +84,7 @@ body {
 
   .input-field-login,
   .login-button,
-  .create-account-button {
+  .create-account-button2 {
     font-size: 12px; /* Ajusta el tamaño de fuente de los campos y botones para pantallas pequeñas */
   }
 
@@ -110,7 +99,7 @@ body {
 
   .input-field-login,
   .login-button,
-  .create-account-button {
+  .create-account-button2 {
     font-size: 14px; /* Ajusta el tamaño de fuente de los campos y botones para pantallas medianas */
   }
 
@@ -125,7 +114,7 @@ body {
 
   .input-field-login,
   .login-button,
-  .create-account-button {
+  .create-account-button2 {
     font-size: 16px; /* Ajusta el tamaño de fuente de los campos y botones para pantallas grandes */
   }
 

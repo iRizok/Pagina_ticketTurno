@@ -151,3 +151,42 @@
 .mi-tabla-estilizada th {
   background-color: #ff4646;
 }
+
+@media (max-width: 768px) {
+  .crud-container {
+    padding: 10px;
+  }
+
+  .crud-container h1 {
+    font-size: 24px;
+  }
+
+  .container-crud {
+    flex-wrap: wrap;
+  }
+
+  .container-crud button {
+    width: 45%;
+    margin: 5px;
+    font-size: 14px;
+  }
+
+  .form-container input[type="text"],
+  .form-container input[type="email"],
+  .form-container input[type="password"],
+  .form-container select {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .button-group button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .mi-tabla-estilizada th,
+  .mi-tabla-estilizada td {
+    padding: 6px;
+    font-size: 14px;
+  }
+}
